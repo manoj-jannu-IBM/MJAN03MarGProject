@@ -22,6 +22,16 @@ packages:
   wpmServer: https://packages.webmethods.io
   wpmRegistry: licensed
 services:
+- serviceName: project.mjan03marg.WmSalesforceProvider.com_webmethods_cloudstreams_salesforce_v53.connections:SFBasicAuth
+  packages:
+  - name: MJAN03MarGProject
+    version: "1.0"
+  - name: SIQACloudStreamsTestWM
+    version: "1.0"
+  - name: WmSalesforceProvider
+    version: 12.0.0.0.17
+  - name: WmSalesforceRESTProvider
+    version: 12.0.0.0.16
 - serviceName: project.mjan03marg.WmSalesforceProvider.com_webmethods_cloudstreams_salesforce_v53.connections:SFFlowDevMJANwebM531
   packages:
   - name: MJAN03MarGProject
@@ -83,6 +93,8 @@ configurationVariables:
   : "false"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:Test12.rh.requestHeaderNames
   : "Content-Type,SOAPAction"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.cr.password
+  : "{AES}PG5Tb6QEvoGlmMKcNsze4ljvytV8PRHvfmUQtTsgqcPI8Yi+ekze7ovAUGnGE+qU"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:test.cn.readTimeout
   : "180000"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:Test12.cr.username
@@ -97,6 +109,8 @@ configurationVariables:
   : Cloudstreams
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:Test12.cn.providerUrl
   : https://login.salesforce.com/services/Soap/u/53.0
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.expireTimeout
+  : "1000"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.pr.followServerRedirects
   : "true"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:Test12.cr.preemptiveAuthEnabled
@@ -121,14 +135,30 @@ configurationVariables:
   : "8192"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:Test12.pr.userAgent
   : Cloudstreams
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.rh.requestHeaderValues
+  : "text/xml,login"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:Test12.pr.allowCircularRedirects
   : "true"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.pr.useExpectCont
   : "false"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.minimumPoolSize
+  : "1"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.rh.requestHeaderNames
+  : "Content-Type,SOAPAction"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.pr.allowCircularRedirects
+  : "true"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.startupBackoffSecs
+  : "10"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.cn.reuseAddr
   : "false"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.cn.hostnameVerifier
+  : org.apache.http.conn.ssl.DefaultHostnameVerifier
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.cr.authSchemeType
   : none
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.timeoutType
+  : fixed
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.maximumPoolSize
+  : "10"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:test.cn.retryIfRequestSentOk
   : "true"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.sessionExpiry
@@ -139,38 +169,62 @@ configurationVariables:
   : Cloudstreams
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:Test12.rh.requestHeaderValues
   : "text/xml,login"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.cn.validateAfterInactivity
+  : "1000"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:Test12.cn.reuseAddr
   : "false"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.maximumPoolSize
   : "10"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.connectionEnabled
+  : "true"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:Test12.poolable
   : "true"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.cn.connectTimeout
   : "180000"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.rh.requestHeaderNames
   : "Content-Type,SOAPAction"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.blockTimeout
+  : "1000"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.cn.socketStaleCheck
   : "true"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:test.pr.serverRedirectMax
   : "5"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.cr.authSchemeType
+  : none
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.cn.sockBuffSize
+  : "8192"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:Test12.timeoutType
   : fixed
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.cn.hostnameVerifier
   : org.apache.http.conn.ssl.DefaultHostnameVerifier
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.pr.httpContentCharSet
+  : ISO-8859-1
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.cn.socketLinger
+  : "-1"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.pr.useChunking
+  : "false"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:test.cn.retryCount
   : "3"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:Test12.pr.serverRedirectMax
   : "5"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:Test12.cr.authSchemeType
   : none
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.cn.readTimeout
+  : "180000"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.cn.enableCompression
   : "false"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:Test12.expireTimeout
   : "1000"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.cn.tcpNoDelay
+  : "false"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.cn.enableCompression
+  : "false"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:Test12.cn.idleTimeout
   : "-1"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:test.sessionExpiry
   : "14"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.pr.followServerRedirects
+  : "true"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.cn.socketLinger
   : "-1"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.minimumPoolSize
@@ -183,9 +237,21 @@ configurationVariables:
   : "{AES}PG5Tb6QEvoGlmMKcNsze4ljvytV8PRHvfmUQtTsgqcPI8Yi+ekze7ovAUGnGE+qU"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.cn.readTimeout
   : "180000"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.cn.socketStaleCheck
+  : "true"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.cn.connectTimeout
+  : "180000"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:test.connectionEnabled
   : "true"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.pr.useExpectCont
+  : "false"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.pr.userAgent
+  : Cloudstreams
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.cn.keepAliveInterval
+  : "300000"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.connectionEnabled
+  : "true"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.cn.enableSNI
   : "true"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:test.cn.socketLinger
   : "-1"
@@ -193,6 +259,8 @@ configurationVariables:
   : "true"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:Test12.maximumPoolSize
   : "10"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.pr.protocolVersion
+  : HTTP/1.1
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:Test12.startupBackoffSecs
   : "10"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.timeoutType
@@ -209,10 +277,16 @@ configurationVariables:
   : "text/xml,login"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:Test12.minimumPoolSize
   : "1"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.poolable
+  : "true"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:Test12.cn.socketLinger
+  : "-1"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.cn.idleTimeout
   : "-1"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:Test12.cn.hostnameVerifier
   : org.apache.http.conn.ssl.DefaultHostnameVerifier
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.cn.retryIfRequestSentOk
+  : "true"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:Test12.cn.retryCount
   : "3"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:test.pr.protocolVersion
@@ -227,6 +301,10 @@ configurationVariables:
   : "false"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:test.cn.socketStaleCheck
   : "true"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.cn.providerUrl
+  : https://login.salesforce.com/services/Soap/u/53.0
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.cr.username
+  : cspro@softwareag.com
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.cr.password
   : "{AES}B8rhTK4DUD1aV3z5wRGTjYaZCTv0DPT1C4mON3qCnd12s1Sa+177lUMRR7zTUwxx"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.cn.idleTimeout
@@ -241,8 +319,12 @@ configurationVariables:
   : "true"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:Test12.pr.useExpectCont
   : "false"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.cr.preemptiveAuthEnabled
+  : "false"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.expireTimeout
   : "1000"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.cn.reuseAddr
+  : "false"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:test.minimumPoolSize
   : "1"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.poolable
@@ -265,8 +347,12 @@ configurationVariables:
   : "true"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.cn.providerUrl
   : https://login.salesforce.com/services/Soap/u/53.0
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.poolIncrementSize
+  : "1"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.cr.username
   : vidi@softwareag.com
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.startupRetryCount
+  : "0"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:test.cn.validateAfterInactivity
   : "1000"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:test.pr.allowCircularRedirects
@@ -281,8 +367,12 @@ configurationVariables:
   : "false"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:test.cr.password
   : "{AES}PG5Tb6QEvoGlmMKcNsze4ljvytV8PRHvfmUQtTsgqcPI8Yi+ekze7ovAUGnGE+qU"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.pr.serverRedirectMax
+  : "5"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:test.cn.keepAliveInterval
   : "300000"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.sessionExpiry
+  : "14"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.pr.allowCircularRedirects
   : "true"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:test.cn.providerUrl
@@ -299,6 +389,8 @@ configurationVariables:
   : "1"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:test.maximumPoolSize
   : "10"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFBasicAuth.cn.retryCount
+  : "3"
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:test.cr.username
   : cspro@softwareag.com
   ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.startupRetryCount
