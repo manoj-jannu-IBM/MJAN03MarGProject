@@ -8,10 +8,123 @@ packages:
   gitUsername: manoj-jannu-IBM
   gitBranch: main
 - name: SIQACloudStreamsTestWM
+  version: "1.0"
   gitServerName: MJANGit
   gitUrl: https://github.com/manoj-jannu-IBM
   gitUsername: manoj-jannu-IBM
   gitBranch: main
 - name: WmSalesforceRESTProvider
+  version: 12.0.0.0.16
   wpmServer: https://packages.webmethods.io
   wpmRegistry: supported
+- name: WmSalesforceProvider
+  wpmServer: https://packages.webmethods.io
+  wpmRegistry: licensed
+services:
+- serviceName: project.mjan03marg.WmSalesforceProvider.com_webmethods_cloudstreams_salesforce_v53.connections:SFFlowDevMJANwebM531
+  packages:
+  - name: MJAN03MarGProject
+    version: "1.0"
+  - name: SIQACloudStreamsTestWM
+    version: "1.0"
+  - name: WmSalesforceProvider
+    version: 12.0.0.0.17
+  - name: WmSalesforceRESTProvider
+    version: 12.0.0.0.16
+- serviceName: project.mjan03marg.integrations:FlowToinvokeOnlyWebMNamespaceConnect
+  packages:
+  - name: MJAN03MarGProject
+    version: "1.0"
+  - name: SIQACloudStreamsTestWM
+    version: "1.0"
+  - name: WmSalesforceProvider
+    version: 12.0.0.0.17
+  - name: WmSalesforceRESTProvider
+    version: 12.0.0.0.16
+- serviceName: SIQACloudStreamsTestWM.services:createAccount531
+  packages:
+  - name: SIQACloudStreamsTestWM
+    version: "1.0"
+configurationVariables:
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.cn.readTimeout
+  : "180000"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.expireTimeout
+  : "1000"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.maximumPoolSize
+  : "10"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.poolable
+  : "true"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.cr.preemptiveAuthEnabled
+  : "false"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.poolIncrementSize
+  : "1"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.rh.requestHeaderValues
+  : "text/xml,login"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.startupBackoffSecs
+  : "10"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.connectionEnabled
+  : "true"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.pr.userAgent
+  : Cloudstreams
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.cn.connectTimeout
+  : "180000"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.rh.requestHeaderNames
+  : "Content-Type,SOAPAction"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.cn.socketStaleCheck
+  : "true"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.blockTimeout
+  : "1000"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.pr.followServerRedirects
+  : "true"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.cn.enableSNI
+  : "true"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.cn.retryIfRequestSentOk
+  : "true"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.cn.providerUrl
+  : https://login.salesforce.com/services/Soap/u/53.0
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.cr.username
+  : vidi@softwareag.com
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.pr.httpContentCharSet
+  : ISO-8859-1
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.cn.validateAfterInactivity
+  : "1000"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.pr.serverRedirectMax
+  : "5"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.timeoutType
+  : fixed
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.pr.useChunking
+  : "false"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.cn.hostnameVerifier
+  : org.apache.http.conn.ssl.DefaultHostnameVerifier
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.pr.useExpectCont
+  : "false"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.cn.sockBuffSize
+  : "8192"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.pr.protocolVersion
+  : HTTP/1.1
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.pr.allowCircularRedirects
+  : "true"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.cn.enableCompression
+  : "false"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.cn.reuseAddr
+  : "false"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.cr.authSchemeType
+  : none
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.cn.socketLinger
+  : "-1"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.cn.retryCount
+  : "3"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.cn.keepAliveInterval
+  : "300000"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.minimumPoolSize
+  : "1"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.sessionExpiry
+  : "14"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.cn.tcpNoDelay
+  : "false"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.startupRetryCount
+  : "0"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.cr.password
+  : "{AES}B8rhTK4DUD1aV3z5wRGTjYaZCTv0DPT1C4mON3qCnd12s1Sa+177lUMRR7zTUwxx"
+  ? cloudstreamsconnection.project..mjan03marg..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SFFlowDevMJANwebM531.cn.idleTimeout
+  : "-1"
