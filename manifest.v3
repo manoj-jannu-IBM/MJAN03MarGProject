@@ -11,18 +11,19 @@
   <null name="replication_services"/>
   <record name="requires" javaclass="com.wm.util.Values">
     <value name="SIQACloudStreamsTestWM">1.0</value>
+    <value name="WmSalesforceRESTProvider">12.0.0.0.16</value>
   </record>
   <null name="lazy_load_node_types"/>
   <null name="listACL"/>
   <value name="webappLoad">yes</value>
   <value name="reloadWithDependentPackage">yes</value>
-  <value name="build">6</value>
+  <value name="build">7</value>
   <null name="description"/>
   <value name="created_date">02-03-2026 09:44:52 GMT</value>
   <null name="extendedProperties"/>
   <null name="target_server_version"/>
   <value name="isProjectPackage">true</value>
-  <value name="lastUpdated">2026-03-02T10:01:15.59398151Z</value>
+  <value name="lastUpdated">2026-03-02T10:04:09.497100012Z</value>
   <value name="wmProjectId">fl47fa3a2cc4a3417eb22cb3c7f6866b5b</value>
   <value name="creator">Manoj Jannu</value>
 </Values>
